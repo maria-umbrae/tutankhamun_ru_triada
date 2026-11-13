@@ -463,7 +463,7 @@ void message_dialog_draw_background_normal(void)
     g_clip_y1 = (dialog_text_height_blocks * MESSAGE_BLOCK) - 3 + dialog_y_text;
     rich_text_clear_links();
     if (message->type != LANG_MESSAGE_DIALOG_CITY_MESSAGE) {
-        draw_content(content, 6);
+        draw_content(content, 19);
     } else {
         draw_city_message_body(content);
     }
