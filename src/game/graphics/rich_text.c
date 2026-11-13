@@ -57,8 +57,8 @@ enum rich_text_line_limit {
 
 enum rich_text_letter {
     RICH_TEXT_LETTER_TALL_FIRST = 0x60,
-    RICH_TEXT_LETTER_C_CEDILLA = 199,
-    RICH_TEXT_CHAR_C_CEDILLA = 0xE7,
+    RICH_TEXT_LETTER_COMMA = 12,
+    RICH_TEXT_LETTER_PERIOD = 14,
 };
 
 typedef struct rich_text_layout {
@@ -194,13 +194,14 @@ int32_t rich_text_draw_character(int32_t font, uint8_t letter_index, int32_t x, 
     int32_t image_id = (g_last_image_id - 1) + font;
     int32_t line_height = (large_line == 0) ? RICH_TEXT_LINE_HEIGHT : RICH_TEXT_TALL_LINE_HEIGHT;
     int32_t raise = image_header_get(image_id)->height - line_height;
+
     if (raise < 0) {
         raise = 0;
     }
-    if (letter_index < RICH_TEXT_LETTER_TALL_FIRST) {
-        raise = 0;
-    }
-    if (letter_index == RICH_TEXT_LETTER_C_CEDILLA || letter_index == RICH_TEXT_CHAR_C_CEDILLA) {
+
+    if (letter_index < RICH_TEXT_LETTER_TALL_FIRST &&
+        letter_index != RICH_TEXT_LETTER_COMMA &&
+        letter_index != RICH_TEXT_LETTER_PERIOD) {
         raise = 0;
     }
     if (measure_only == 0) {
