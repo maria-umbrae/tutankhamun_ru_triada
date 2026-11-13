@@ -1,3 +1,4 @@
+
 // Text drawing and measuring with the font images: characters, strings, centred and multiline text, numbers,
 // amounts and years, the lang_text_* variants and the blinking cursor of a text field. Drawing supports the hash
 // mode ('#' replaced by substituted characters) and records where the input cursor falls; drawing the cursor also
@@ -22,6 +23,7 @@
 #include "widget/widget_data.h"
 #include "window/window_data.h"
 #include "window/window_image_group.h"
+#include "../triada_encoding.h"
 #include <stdint.h>
 #include <string.h>
 
@@ -127,10 +129,10 @@ uint8_t text_hash_next_char(void)
 
 uint8_t text_letter_image_id(int32_t letter_index)
 {
-    if (letter_index < 0 || letter_index >= (int32_t) sizeof(letter_image_ids)) {
+    if (letter_index < 0 || letter_index >= (int32_t) sizeof(triada_char_to_glyph)) {
         return 0;
     }
-    return letter_image_ids[letter_index];
+    return triada_char_to_glyph[letter_index];
 }
 
 // The last row of a glyph's bitmap that has ink, memoized per image id: stored as the row plus the offset, so zero
