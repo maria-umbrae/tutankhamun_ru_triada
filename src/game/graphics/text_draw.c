@@ -1,4 +1,3 @@
-
 // Text drawing and measuring with the font images: characters, strings, centred and multiline text, numbers,
 // amounts and years, the lang_text_* variants and the blinking cursor of a text field. Drawing supports the hash
 // mode ('#' replaced by substituted characters) and records where the input cursor falls; drawing the cursor also
@@ -200,6 +199,9 @@ static int32_t glyph_ink_bottom(int32_t image_id)
 
 static int32_t text_character_raise(int32_t font, uint8_t letter_index, uint8_t glyph_id)
 {
+    if (letter_index >= 128) {
+        return 0;
+    }
     if (letter_index < TEXT_LETTER_TALL_FIRST) {
         return 0;
     }
