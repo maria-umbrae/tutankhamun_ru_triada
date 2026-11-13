@@ -1,96 +1,95 @@
-# Tutankhamun [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_windows.yml/badge.svg)](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_windows.yml) [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_linux.yml/badge.svg)](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_linux.yml) [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_android.yml/badge.svg)](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_android.yml) [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_macos.yml/badge.svg)](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_macos.yml)
+# Tutankhamun – Russian Triada Localisation Fork
 
-[![Discord](res/badges/discord.svg)](https://discord.gg/HS4njmBvpb)
-[![Windows](res/badges/windows.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_windows/main/windows_build.zip)
-[![Windows x64](res/badges/windows_x64.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_windows/main/windows_build_x64.zip)
-[![Linux](res/badges/linux.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_linux/main/linux_appimage.zip)
-[![Android](res/badges/android.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_android/main/android_apk.zip)
-[![macOS arm64](res/badges/macos.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_macos/main/macos_arm_build.zip)
-[![macOS x64](res/badges/macos_x64.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_macos/main/macos_x64_build.zip)
+A Russian localisation compatibility fork of [Tutankhamun](https://github.com/dalerank/tutankhamun), an open-source re-implementation of **Pharaoh + Cleopatra** (Impressions Games, 2000) in C.
 
-Tutankhamun is an open-source re-implementation of **Pharaoh + Cleopatra 2.1** (Impressions Games, 2000) in C: the
-game written again as a program of its own, `tutankhamun`, that plays on the files of your own copy of the game
-in a window (SDL2) on modern Windows, Linux and macOS, and on Android. It is also a readable reference for the game's
-behaviour, mainly to support [Akhenaten](https://github.com/dalerank/Akhenaten).
+This fork adds support for the **Russian Triada localisation**, including a Triada-specific character-to-glyph mapping that allows the original Russian text and font assets to be rendered correctly.
 
-![Tutankhamun: a city of the Pharaoh campaign](res/screenshots/tutankhamun.png)
+The project retains the original game's logic, graphics, gameplay behaviour and save-file compatibility. It runs on modern Windows, Linux and macOS, as well as Android, using the original game data.
 
-Tutankhamun will not run without the original Pharaoh + Cleopatra files. You can buy a digital copy from
-[GOG](https://www.gog.com/game/pharaoh_cleopatra) or
-[Steam](https://store.steampowered.com/app/564530/Pharaoh__Cleopatra/), or use an original CD-ROM version updated to
-2.1.
+![Tutankhamun](res/screenshots/tutankhamun_ru.png)
 
-The goal of the project is to have exactly the same game logic as Pharaoh + Cleopatra, with the same look and feel.
-This means that the saved games are compatible with the original game, and any gameplay bugs present in the original
-are also present in Tutankhamun. No game assets are part of this repository.
+## Russian Triada localisation
+
+The main purpose of this fork is to provide compatibility with the Russian localisation released by **Triada**.
+
+The original game uses a custom character-to-glyph mapping to display text through its bitmap fonts. Different localised editions may use different mappings, which can result in incorrect characters being displayed when their game data is used with an incompatible engine.
+
+This fork incorporates a Triada-specific character mapping:
+
+- Correct rendering of Russian Cyrillic text.
+- Compatibility with the original Triada font assets.
+- Preservation of the original Russian text resources.
+- No need to modify the original game executable or replace the localisation files.
+
+## Requirements
+
+Tutankhamun requires the original **Pharaoh + Cleopatra** game files.
+
+You must provide your own copy of the game with the Russian Triada localisation installed. No original game assets, executable files, fonts or translation resources are distributed in this repository.
+
+The game uses the original installation's data files and retains compatibility with the original save-file format.
 
 ## Running the game
 
-| Platform | Unstable build | How to run and build |
-| -------- | -------------- | -------------------- |
-| Windows (32-bit) | [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_windows.yml/badge.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_windows/main/windows_build.zip) | [docs/windows.md](docs/windows.md) |
-| Windows x64 | [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_windows.yml/badge.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_windows/main/windows_build_x64.zip) | [docs/windows.md](docs/windows.md) |
-| Linux | [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_linux.yml/badge.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_linux/main/linux_appimage.zip) | [docs/linux.md](docs/linux.md) |
-| macOS arm64 | [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_macos.yml/badge.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_macos/main/macos_arm_build.zip) | [docs/macos.md](docs/macos.md) |
-| macOS x64 | [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_macos.yml/badge.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_macos/main/macos_x64_build.zip) | [docs/macos.md](docs/macos.md) |
-| Android | [![Github Actions](https://github.com/dalerank/tutankhamun/actions/workflows/tutankhamun_android.yml/badge.svg)](https://nightly.link/dalerank/tutankhamun/workflows/tutankhamun_android/main/android_apk.zip) | [docs/android.md](docs/android.md) |
+| Platform | Build instructions |
+| -------- | ------------------ |
+| Windows (32-bit) | [docs/windows.md](docs/windows.md) |
+| Windows x64 | [docs/windows.md](docs/windows.md) |
+| Linux | [docs/linux.md](docs/linux.md) |
+| macOS arm64 | [docs/macos.md](docs/macos.md) |
+| macOS x64 | [docs/macos.md](docs/macos.md) |
+| Android | [docs/android.md](docs/android.md) |
 
-The unstable build is the latest build of `main`:
+You need an installed copy of Pharaoh + Cleopatra 2.1 with the Triada localisation. The game uses its original data files and can locate the installation automatically or accept its location through the [command line](docs/command-line.md).
 
-- **Windows**: a zip with `tutankhamun.exe` and its `config` folder, unpack it anywhere;
-- **Linux**: `Tutankhamun-x86_64.AppImage`, one file for 64-bit distributions with glibc 2.34+;
-- **macOS**: a disk image with `Tutankhamun.app` for Apple silicon (11.7+) or Intel (10.15+), signed ad hoc;
-- **Android**: `app-release.apk` for Android 5.0+, played with touch.
+Like the original, it stores player profiles and saved games in the original format.
 
-You need an installed Pharaoh + Cleopatra 2.1; only its data is used. The game finds the installation itself (the
-Steam and GOG folders, the folder it remembers, then a folder picker) or takes it on
-[the command line](docs/command-line.md). Like the original it writes the players and the saved games into the game
-folder, in the original format.
+**Free play:** The main menu's second button allows you to select a family and access the Pharaoh and Cleopatra missions without changing campaign progress, records or high scores.
 
-**Free play**: the main menu's second button asks for the family, whose folder keeps the saved games, then lists
-every Pharaoh and Cleopatra mission; its end returns to the main menu without changing the campaign progress, records
-or high scores.
+**Resolutions:** Any resolution from 640 × 480 up to the display's native resolution is supported. F7 / F8 / F9 and F6 (full screen) work as in the original.
 
-**Resolutions**: any size from 640x480 up to the display's; F7 / F8 / F9 and F6 (full screen) work as in the
-original.
-
-**Discord**: on the desktop the game shows the current mission in your Discord status (`config/discord.json` turns
-it off).
+**Discord:** On desktop platforms, the game can display the current mission in your Discord status (`config/discord.json` can disable this feature).
 
 ## Building from source
 
-Every platform builds from the same CMake project, with SDL2 and SDL2_mixer fetched and linked statically:
-`build.bat` on [Windows](docs/windows.md#building), presets and an AppImage script on [Linux](docs/linux.md#building),
-presets and a disk image script on [macOS](docs/macos.md#building), Gradle on [Android](docs/android.md#building)
-(and [Google Play](docs/android.md#google-play)). [BUILD.md](BUILD.md) has the details.
+All platforms use the same CMake project, with SDL2 and SDL2_mixer fetched and linked statically.
 
-## Contributing
+- [Windows build instructions](docs/windows.md#building)
+- [Linux build instructions](docs/linux.md#building)
+- [macOS build instructions](docs/macos.md#building)
+- [Android build instructions](docs/android.md#building)
+- [General build documentation](BUILD.md)
 
-This project is not meant for further development: it exists only to preserve the heritage of the original game and
-to port it to other platforms. Pull requests are accepted only for minimal fixes. See
-[CONTRIBUTING.md](CONTRIBUTING.md).
+The Triada character mapping is included in the source code, so no additional encoding files need to be installed at runtime.
+
+## Relationship with the original project
+
+This repository is a downstream fork of [dalerank/tutankhamun](https://github.com/dalerank/tutankhamun).
+
+The original project provides the game engine re-implementation, while this fork focuses on Russian Triada localisation compatibility.
+
+All original project credits and third-party component attributions are retained. This fork is independently maintained and is not an official release of the upstream project.
+
+Upstream releases and nightly builds do not include the changes made in this fork.
 
 ## Credits
 
-Parts of the code come from other projects (details: [LICENSES/README.md](LICENSES/README.md) and each file's
-header):
+Original project: [Tutankhamun](https://github.com/dalerank/tutankhamun) by dalerank.
 
-- [Akhenaten](https://github.com/dalerank/Akhenaten): the Bink video decoder (src/third_party/akhenaten_bink), the SDL
-  build scripts (cmake/), the Discord presence, the mouse cursors, the Discord and Patreon pictures of the main menu's
-  link buttons, the model of the resolution list and of the link buttons;
-- [Julius](https://github.com/bvschaik/julius): src/platform/sound_device.c and src/platform/screen.c, the cursors'
-  pixel art, and the select list that the resolution list draws like (src/game/window/display_resolution_list.c);
-- the GitHub picture of the link buttons is the Simple Icons mark (CC0-1.0).
+Parts of the code come from other projects (details: [LICENSES/README.md](LICENSES/README.md) and individual file headers):
 
-Third-party libraries: SDL2 2.32.10 (zlib), SDL2_mixer 2.8.0 (zlib) with minimp3 (CC0-1.0), parson 1.5.3 (MIT,
-src/third_party/parson); their licence texts are in LICENSES/.
+- [Akhenaten](https://github.com/dalerank/Akhenaten): the Bink video decoder (`src/third_party/akhenaten_bink`), SDL build scripts (`cmake/`), Discord presence, mouse cursors and several UI components.
+- [Julius](https://github.com/bvschaik/julius): `src/platform/sound_device.c`, `src/platform/screen.c`, cursor pixel art and the select list used by the resolution selector.
+- The GitHub picture of the link buttons is the Simple Icons mark (CC0-1.0).
+
+Third-party libraries: SDL2 2.32.10 (zlib), SDL2_mixer 2.8.0 (zlib) with minimp3 (CC0-1.0), and parson 1.5.3 (MIT). Their licence texts are available in `LICENSES/`.
 
 ## License
 
-The project's own code is under the MIT License ([LICENSE](LICENSE)); the files taken from Julius and Akhenaten keep
-their AGPL-3.0 ([LICENSES/AGPL-3.0.txt](LICENSES/AGPL-3.0.txt), listed in LICENSES/README.md with the libraries'
-licences). A program built with those files, as every build of tutankhamun is, is distributed under AGPL-3.0 as a
-whole.
+The project's own code is distributed under the MIT License ([LICENSE](LICENSE)).
 
-Tutankhamun is not affiliated with or endorsed by the owners of Pharaoh and Cleopatra. The game's data, names and
-trademarks belong to their owners; you need your own copy of the game to play.
+Files taken from Julius and Akhenaten retain their AGPL-3.0 licence ([LICENSES/AGPL-3.0.txt](LICENSES/AGPL-3.0.txt)). A program built with these files is distributed under AGPL-3.0 as a whole.
+
+All original third-party licence terms and attributions are retained.
+
+Tutankhamun is not affiliated with or endorsed by the owners of Pharaoh and Cleopatra. The game's data, names and trademarks belong to their respective owners. You must provide your own copy of the original game.
